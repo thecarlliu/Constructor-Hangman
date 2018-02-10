@@ -1,8 +1,8 @@
 function Letter (char, boolean) {
     this.char = char;
     this.revealed = boolean;
-    this.show = function() {
-        if (this.char === "&nbsp;") {
+    this.update = function() {
+        if (this.char === " ") {
             this.revealed = true;
             return this.char;
         }
@@ -22,3 +22,5 @@ function Letter (char, boolean) {
         }
     };
 }
+
+module.exports = Letter;
