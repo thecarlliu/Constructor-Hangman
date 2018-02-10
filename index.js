@@ -40,6 +40,7 @@ var playGame = function() {
         currentWord.display();
         playGame();
     }
+    //condition for numGuesses-- is: if prevNumRevealed is the same as numRevealed, need to make that class variable.
     //add else if condition for if numGuesses runs out,
     //if game is won, what to say.
 };
