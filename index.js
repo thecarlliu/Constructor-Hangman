@@ -30,19 +30,31 @@ var playGame = function() {
                 message: "Guess a letter!"
             }
         ]).then(function(answers) {
+            var prevNumRevealed = currentWord.numRevealed;
             currentWord.guess(answers.guess);
+            var newNumRevealed = currentWord.numRevealed;
             currentWord.display();
+            if (prevNumRevealed === newNumRevealed) {
+                numGuesses--;
+                console.log("Bad choice! You have "+numGuesses+" guesses left!");
+            }
             playGame();
         });
     }
-    else {
+    else if (currentWord.numRevealed < currentWord.letterArr.length && numGuesses === 0) {
+        console.log("You know nothing! Try again!");
         setWord();
+        numGuesses = 7;
         currentWord.display();
         playGame();
     }
-    //condition for numGuesses-- is: if prevNumRevealed is the same as numRevealed, need to make that class variable.
-    //add else if condition for if numGuesses runs out,
-    //if game is won, what to say.
+    else if (currentWord.numRevealed === currentWord.letterArr.length && numGuesses > 0) {
+        console.log("You are the mother of dragons,\nbreaker of chains,\nguesser of words! Play again!");
+        setWord();
+        numGuesses = 7;
+        currentWord.display();
+        playGame();
+    }
 };
 
 setWord();
