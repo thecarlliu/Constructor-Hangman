@@ -5,9 +5,9 @@ var currentWord;
 var numGuesses = 7;
 
 //list of words - Game of Thrones themed
-//var wordsArr = ["crow","khaleesi","maester","meereenese knot", "milk of the poppy", "pyromancer", "raven", "red wedding", "the second sons", "the seven", "the unsullied", "valyrian", "the wall", "warg", "white walkers", "wildfire", "wilding"];
+var wordsArr = ["crow","khaleesi","maester","meereenese knot", "milk of the poppy", "pyromancer", "raven", "red wedding", "the second sons", "the seven", "the unsullied", "valyrian", "the wall", "warg", "white walkers", "wildfire", "wilding"];
 
-var wordsArr = ["white walkers"]; //for testing
+//var wordsArr = ["white walkers"]; //for testing
 
 //Randomly selects a word from our wordsArr
 function setWord() {
@@ -19,11 +19,6 @@ function setWord() {
 var playGame = function() {
     if (currentWord.numRevealed < currentWord.letterArr.length && numGuesses > 0) {
         inquirer.prompt([
-            // {
-            //     type: "confirm",
-            //     name: "welcome",
-            //     message: "Welcome to Constructor-Hangman: Game of Thrones Edition. Would you like to play?"
-            // },
             {
                 type: "input",
                 name: "guess",
@@ -37,6 +32,9 @@ var playGame = function() {
             if (prevNumRevealed === newNumRevealed) {
                 numGuesses--;
                 console.log("Bad choice! You have "+numGuesses+" guesses left!");
+            }
+            else if (prevNumRevealed < newNumRevealed) {
+                console.log("Your guess was correct!");
             }
             playGame();
         });
