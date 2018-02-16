@@ -1,0 +1,24 @@
+{
+  "name": "Constructor-Hangman",
+  "version": "1.0.0",
+  "description": "Hangman game built through Node and the Inquirer npm package Game of Thrones themed. Created by Carl Liu",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecarlliu/Constructor-Hangman.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thecarlliu/Constructor-Hangman/issues"
+  },
+  "homepage": "https://github.com/thecarlliu/Constructor-Hangman#readme"
+}
